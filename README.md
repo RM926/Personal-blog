@@ -1,24 +1,11 @@
-# blog
+# Blog
 
-## Project setup
-```
-npm install
-```
+## 介绍
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+前后端分离实现的个人博客网站
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## 相关技术栈
 
-### Lints and fixes files
-```
-npm run lint
-```
+前端：Vue及其生态 + axios
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+后端：Node.js + MongoDB + Mongoose
