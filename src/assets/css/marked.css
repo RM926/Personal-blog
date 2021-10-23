@@ -1,0 +1,74 @@
+blockquote {
+  margin: 1rem 0;
+  border-left: 0.1875rem solid rgb(129, 216, 208);
+  padding: 0.2rem 0.6rem;
+  /* background: rgba(204, 204, 204, 0.5); */
+}
+blockquote p{
+  margin-top:0;
+}
+ul, ol{
+  /* padding-bottom: 1; */
+  padding-left: .7rem;
+  /* line-height: 1.125rem; */
+}
+li{
+  margin:.6rem 0;
+  padding-left: .7rem;
+}
+img:not(.bgImage) {
+  border: 1px solid #ccc;
+}
+code {
+  /* color: rgb(147, 240, 216); */
+  /* background: rgb(71, 73,73); */
+  font-family: Consolas;
+  padding: 0 0.3125rem;
+  border-radius: 0.3125rem;
+  overflow-x: auto;
+}
+hr {
+  /* border:1px solid red; */
+  /* margin-bottom: 0.625rem 0 0; */
+}
+hr{/*渐变*/
+  width:100%;
+  margin:0 auto;
+  margin-bottom:.4rem;
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, rgb(47, 88, 8), rgb(58, 184, 90), rgba(172, 226, 193,.6));
+}
+p{
+  margin-bottom:1.3rem;
+  line-height:1.7rem;
+}
+pre {
+  padding: 0.625rem 0.625rem;
+  margin-bottom:1.2rem;
+  background:  rgb(71, 73,73);
+  border-radius: 0.3125rem;
+  overflow-x: auto;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 1rem 0;
+}
+code{
+  font-family:FangSong,_GB2312 FangSong_GB2312,STSong，STFangsong
+}
+h2{
+  font-size: 1.1rem;
+}
+h3{
+  font-size:.9rem;
+}
+h4{
+  font-size:.8rem;
+}
+h5{
+  font-size:.7rem
+}
+h6{
+  font-size:.6rem
+}

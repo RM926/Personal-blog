@@ -1,0 +1,33 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+html{
+  font-size:16px;
+}
+p,li,td{
+  font-family:FangSong,_GB2312 FangSong_GB2312,STSong，STFangsong
+}
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+li{
+ list-style: none;
+}
+@media screen and (max-width:600){
+  html{
+    font-size:14px;
+  }
+}
+@media screen and (max-width:320px){
+  html{
+      font-size:13px;
+  }
+}
+@media screen and (min-width:321px) and (max-width:375px){
+  html{
+      font-size:14px;
+  }
+}

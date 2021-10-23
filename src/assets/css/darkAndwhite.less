@@ -1,0 +1,86 @@
+// 白天色
+@bgColor-daily: #ffffff;
+@textColor-daily: #000000;
+@subTextColor-daily: #666666;
+@tipsColor-daily: #CCCCCC;
+@errorColor-daily: #EE6560;
+@alertColor-daily:rgba(20, 20, 20, 0.2);
+@alertBoxColor-daily:rgb(192, 191, 191);
+@toastColor-daily:rgb(226, 226, 226);
+//highlight-color
+@codeColor-daily:#f7f7f7;
+@preColor-daily:#FAFAFA;
+@hljsString-daily:#518009;
+@blockquote-daily:rgba(226, 225, 225, 0.5);
+ 
+// 夜间色
+@bgColor-dark: #292A2D;
+@textColor-dark: #A9A9B3;
+@subTextColor-dark: #A9A9B3;
+@tipsColor-dark: #A9A9B3;
+@alertColor-dark:rgba(240, 235, 235, 0.1);
+@alertBoxColor-dark:#3e3f41;
+@toastColor-dark:rgb(31, 30, 30);
+
+@codeColor-dark:rgb(71, 73,73);
+@preColor-dark:rgb(71, 73,73);
+@hljsString-dark:greenyellow;
+@blockquote-dark:rgba(164,157,157,50%);
+// 模式切换
+.styleChange(@theme) {
+  // 定义页面显示各种颜色，拼接 theme 主题
+  @bgColor: "bgColor-@{theme}";
+  @textColor: "textColor-@{theme}";
+  @subTextColor: "subTextColor-@{theme}";
+  @tipsColor: "tipsColor-@{theme}";
+  @alertBgColor:"alertColor-@{theme}";
+  @alertBoxBgColor:"alertBoxColor-@{theme}";
+  @toastBgcolor:"toastColor-@{theme}";
+
+  @codeColor:"codeColor-@{theme}";
+  @preColor:"preColor-@{theme}";
+  @hljsString:"hljsString-@{theme}";
+  @blockquote:"blockquote-@{theme}";
+
+  transition:.5s linear;
+  background: @@bgColor; // 使用 @@style 双@的方法取值
+  color:@@textColor;
+  a{
+    color:@@textColor
+  }
+  input,textarea,.original-view{
+    color:@@textColor;
+    background: @@bgColor;
+  }
+  .original-view{
+    border:1px solid @@textColor;
+  }
+  #alert{
+    background:@@alertBgColor
+  }
+  .alert-box{
+    background:@@alertBoxBgColor
+  }
+  .toast{
+    background:@@toastBgcolor;
+  }
+  code,pre{
+    background:@@codeColor
+  }
+  .hljs-string,.hljs-symbol,.hljs-bullet,.hljs-addition{
+    color:@@hljsString
+  }
+  blockquote{
+    background:@@blockquote
+  }
+}
+ 
+// 白天模式
+.white {
+  .styleChange(daily); // 执行less 函数
+}
+ 
+// 夜间模式
+.dark {
+  .styleChange(dark); // 执行less函数，传入 dark ，表示夜间
+}

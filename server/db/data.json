@@ -1,0 +1,110 @@
+[{
+  "_id": "616fa543ecfa492190af2122",
+  "aid": 16,
+  "title": "Hello World",
+  "content": "Hello！The world.\n\nHello！The world of  the Net.\n\nHello！The world of code.\n\nJust let this article as the start of this personal Web.\n\n",
+  "date": "2021-10-20T23:54:26Z",
+  "isPublish": true,
+  "tags": [
+    "随笔"
+  ]
+},
+{
+  "_id": "616fadafecfa492190af2123",
+  "aid": 17,
+  "title": "关于CSS的属性(一)",
+  "content": "**粘性定位** `position：sticky`\n\n**CSS计算属性**  `height : calc (100% - 98px)`\n\n**超出布局部分用省略号**\n\n```css\ndiv{\n    overflow:hidden;\n\twhite-space:nowrap;\n\ttext-overflow:ellipsis;\n}\n```\n\n**媒体查询**  \n\n<a href=\"https://www.cnblogs.com/august-8/p/4537685.html\"  style=\"color:green\">相关链接</a>\n\n```css\n@media only screen and（min-width: 440px）{body{color:xxx}}\n```\n\n**渐变色**\n\n> 括号内的第一个参数可以是角度，也可以时 to right ,to bottom right\n\n```css\ndiv{\n\tbackground-image: liner-gradient( x deg ,color, color , color….)\n}\n```\n\n**盒子阴影**\n\n<a href=\"https://www.cnblogs.com/fps2tao/p/11286774.html\"  style=\"color:green\">相关链接</a>\n\n```css\ndiv{\n    box-shodow:none |inset  x--offset y-offset  blur-radius spread-radius color\n}\n```\n\n**CSS3盒子模型***\n\n```css\n*{\n    box-sizing:border-box;\n}\n```\n\n**阻止点击事件**\n\n```css\ndiv{\n  pointer-events:none   \n}\n```\n\n**悬停小手样式**\n\n```css\ndiv{\n\tcursor: pointer;\n}\n```\n\n**设置溢出内容滑动和滚动条样式**\n\n```css\n/*可滑动*/\noverflow:auto;\noverflow-y:scroll;\n/*不可滑动*/\noverflow:hidden;\n/*设置溢出内容可滑动且没有滑动条，不同浏览器不同的处理方式*/\n.demo::-webkit-scrollbar {\n \tdisplay: none;      /* Chrome Safari */\n}\n.demo{\n \tscrollbar-width: none;   /* firefox */\n \t-ms-overflow-style: none;  /* IE 10+ */\n \toverflow-x: hidden;\n \toverflow-y: auto;\n}\n/* 设置滚动条的样式 */\n::-webkit-scrollbar {    \n  width: .4rem;\n  height: .4rem;\n}\n/* 滚动槽 */\n/* ::-webkit-scrollbar-track {\n  box-shadow: inset 0 0 6px black;\n  border-radius: 10px;\n  background: burlywood;\n} */\n/* 滚动条滑块 */\n::-webkit-scrollbar-thumb {\n  border-radius: .2rem;\n  /* background: mediumvioletred; */\n  background:#A9A9B3\n  /* box-shadow: inset 0 0 6px yellow; */\n}\n/* ::-webkit-scrollbar-thumb:window-inactive {\n    background: paleturquoise;\n} */\n```\n\n**背景图片填充**\n\n```css\nbackground-size:100%,100%;\n```\n\n**margin-right：auto**\n\n填充剩余可用的右侧空间，可以使元素剩余元素靠右，本身元素靠左\n\n**去除图片自带的下边空间**\n\n```css\nvertical-align : middle \n```\n",
+  "date": "2021-10-20T23:54:41Z",
+  "isPublish": true,
+  "tags": [
+    "css"
+  ]
+},
+{
+  "_id": "6170b82eecfa492190af2126",
+  "aid": 20,
+  "title": "图片链接测试",
+  "content": "<image style=\"width:200px;height:200px;border:none\" src=\"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fdoutul.oss-cn-hangzhou.aliyuncs.com%2Fwp-content%2Fuploads%2F2019%2F12%2F0b3a3cb2784c6ad.gif&refer=http%3A%2F%2Fdoutul.oss-cn-hangzhou.aliyuncs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1637378443&t=a0e06c6381c4f36f6f13a39ae2e26037\">",
+  "date": "2021-10-21T03:21:22Z",
+  "isPublish": true,
+  "tags": [
+    "测试"
+  ]
+},
+{
+  "_id": "6170dbf8ecfa492190af2127",
+  "aid": 21,
+  "title": "搭建博客过程",
+  "content": "## 过程\n\n\n\n### 1.初始化包管理文件`package.json`\n\n```\nnpm init -y\n```\n\n\n\n### 2.开发时依赖和运行时依赖\n\n开发时依赖：\n\n```\nnpm i -D\nnpm install -dev\n```\n\n运行时依赖：\n\n```\nnpm i -S\nnpm install --save-dev\n```\n\n\n\n### 3.commonjs的导出\n\n```\nmodule.exports = Modles\n```\n\n\n\n### 4.跨域的解决\n\n在根文件建一个文件`vue.config.js`\n\n```js\nmodule.exports = {\n  devServer: {\n      proxy: { // 设置代理\n          '/api': {\n              target: 'http://127.0.0.1:5500', // 请求的目标服务器接口\n              changeOrigin: true, // 在本地会创建一个虚拟服务端，然后发送请求的数据，并同时接收请求的数据，这样服务端和服务端进行数据的交互就不会有跨域问题\n              pathRewrite: { // 重写请求\n                  '^/api': '/api' // 替换target中的请求地址，也就是说在请求http://127.0.0.1:8888/XXXXX这个地址的时候直接写成/api即可。\n              }\n          }\n      }\n  }\n```\n\n后端用`node.js`在设置API的时候，在前面加上`/api`\n\n前端用`axios`f发送请求来获取后台数据的时候也应该加上`/api`\n\n```js\nimport axios from 'axios'\naxios.get('/api/').then(res => {\n  console.log(res)\n})\n```\n\n\n\n### 5.less的使用\n\n在vue界面的`script`标签中引入\n\n```js\n<script>\n    import '路径'\n</script>\n```\n\n\n\n### 6.白天和黑夜模式的实现\n\n用函数思想来决定样式， `less`可以实现\n\n注意:如果某个有特定样式的标签想要实现在模式换后也有样式变化的效果，也可以按下面的写法： `.styleChange(@theme){ 其他标签{ 样式 }}` \n\n因为如果将总体样式导入到 `body` 标签中，只能实现部分标签可以切换样式\n\n```less\n// 白天色\n@bgColor-daily: #F7F8FA;\n@textColor-daily: #333333;\n@subTextColor-daily: #666666;\n@tipsColor-daily: #CCCCCC;\n@errorColor-daily: #EE6560;\n \n// 夜间色\n@bgColor-dark: #171B30;\n@textColor-dark: #FFFFFF;\n@subTextColor-dark: rgba(255, 255, 255, 0.6);\n@tipsColor-dark: rgba(255, 255, 255, 0.4);\n \n \n// 模式切换\n.styleChange(@theme) {\n  // 定义页面显示各种颜色，拼接 theme 主题\n  @bgColor: \"bgColor-@{theme}\";\n  @textColor: \"textColor-@{theme}\";\n  @subTextColor: \"subTextColor-@{theme}\";\n  @tipsColor: \"tipsColor-@{theme}\";\n \n  width: 100%;\n  background: @@bgColor; // 使用 @@style 双@的方法取值\n}\n \n// 白天模式\n.test {\n  .styleChange(daily); // 执行less 函数\n}\n \n// 夜间模式\n.test-dark {\n  .styleChange(dark); // 执行less函数，传入 dark ，表示夜间\n}\n```\n\n\n\n### 7.vue中使用`marked`和`heightlight.js`\n\n> 必须引入样式，要不解析出来的代码没有`高亮效果`,当然，引入不同的样式文件会有不同的`高亮效果`\n\n```vue\n<template>\n  <div class='article'>\n    <div v-html=\"HLarticleHtml\">\n  </div>\n</template>\n\n<script>\nimport marked from \"marked\";\nimport hljs from \"highlight.js\";\n//样式文件\nimport 'highlight.js/styles/monokai-sublime.css'\n\n marked.setOptions({\n      renderer: new marked.Renderer(),\n      highlight: function (code, lang) {\n        const language = hljs.getLanguage(lang) ? lang : \"plaintext\";\n        return hljs.highlight(code, { language }).value;\n      },\n    });\nexport default {\n  name: \"Article\",\n  data() {\n    return {\n      HLarticleHtml:'',\n    };\n  },\n  created() {\n      this.HLarticleHtml = this.marked('makedown格式的字符串')\n    });\n  },\n  methods: {\n    marked,\n  },\n};\n```\n\n\n\n## 题\n\n**1.flex纵向布局后，会出现某个元素占满这个width，导致hover这个属性的范围扩大**\n\n​\t可以使用给子元素使用`align-self:center/left/right`样式\n\n**2.在`get`请求中包装请求路径query部分中的`payload`，在后台接收取出的是字符串，要将其转换为数组对象才可获取相应的参数，如：**\n\n```js\n//前台请求\nlocalhost:8080/articles?payload={value:'xxx',page:2}\n//后台接收,使用eval('('+ string + ')')函数转换\nrouter.get('/api/articles', (req, res) => {\n    console.log(typeof req.query.payload) //string\n    const payload1  = req.query.payload\n    const payload  = payload1?eval('('+payload1+')'):{}\n    console.log(typeof payload) //object\n```\n\n**3.被嵌套了 <keep-alive> 的同个 <router-view/> 界面中动态路由切换，地址栏跳转，页面没变化**\n\n如从`http://localhost:8080/tagArticle/javascript`跳转到 `http://localhost:8080/tagArticle/css`，给 <router-view/>添加一个`key`属性可解决\n\n```vue\n<template>\n<div>\n<keep-alive>\n        <router-view :key='key'/>\n</keep-alive>\n</div>\n</template>\n<script>\nexport default {\n  name: \"xxxx\",\n  computed: {\n    key(){\n      return this.$route.name + Math.random()\n    },\n}\n</script>\n```\n\n未完待续...\n",
+  "date": "2021-10-21T03:18:16Z",
+  "isPublish": true,
+  "tags": [
+    "过程"
+  ]
+},
+{
+  "_id": "6170de21ecfa492190af2128",
+  "aid": 22,
+  "title": "Vue Router",
+  "content": "## vue-router\n\n`单页面富应用`，向服务器发送请求回来的一整个页面包含了所有前端路由构建起来的`映射关系`,在切换页面的时候不用频繁的向服务器发送请求\n\n\n\n### 原生js的实现方式\n\n#### URL的hash\n\n**URL** : scheme : // host : port / path ？**query** # fragment     `协议://主机:端口/路径？查询`\n\nURL的hash也就是锚点(#),本质上是改变`window.location`的`href属性`\n\n```\nlocation.href\n//http://192.168.1.101:8000/example\nlocation.hash = '/foo'\n```\n\n#### HTML5的history模式\n\n```\nhistory.pushState({},'','/foo')\nhistory.replaceState({},'','/foo')\nhistory.go(number)\nhistory.back()\nhistory.forward()\n```\n\n\n\n## vue-router的使用\n\n#### 1、懒加载导入 `()=>import('position')`\n\n```\nconst Home = () => import('路径')\n```\n\n\n\n#### 2、路由映射配置 `routes`\n\n```javascript\nimport Vue from 'vue'\nimport VueRouter from 'vue-router'\n\nVue.use(VueRouter)\n\nconst router = new VueRouter({\n\troutes:[\n        //路由的默认值\n        {\n            path:'/',\n            redirect:'./home'\n        },\n\t\t{\n\t\t\tpath:'./home',\n\t\t\tcomponent:Home,\n\t\t\tmeta:{\n\t\t\t\ttitle:'home'\n\t\t\t}\n\t\t}\n\t],\n    //默认是URL的hash模式，这行改变为HTML的history模式\n    mode:'history',\n    //统一修改活跃路由的样式名称\n    linkActiveClass:'active'\n})\n\nexport default router\n```\n\n\n\n#### 3、显示 `<router-link>` `<router-view>`\n\n```main.js\nimport router form './router'\nnew Vue({\n\t//用render函数将App组件转化成的`对象`解析成真正的dom，在利用$moute函数替换挂载`html页面中用来占位的 #app`\n render:h=>h(App),\n router\n}).$moute('#app')\n```\n\n```html\n<router-link to='/home'>首页</router-link>\n<router-link to='/category'>分类</router-link>\n//显示的区域\n<router-view></router-view>\n```\n\n\n\n#### 4、router-link的属性 `to` `replace` `tag` `route-active`\n\n**`to`** 定义路由跳转到的组件\n\n**`replace`** 添加该属性的`router-link`使用`history.replaceStatu()`方法，无法实现回退前进效果；\n\n**`tag`** 改变`router-link`原先的链接状态 ,属性值可以是 `button`\n\n**`route-active`** 自定义活跃状态的 tag 的样式名称\n\n```css\n.router-link-active{\n\tcolor:red;\n}\n```\n\n\n\n#### 5、编程式路由跳转和当前活跃路由 `this.$router` `this.$route`\n\n**编程式路由**\n\n通过路由配置的为`声明式路由跳转`\n\n```javascript\n//事件绑定\nnew Vue({\n\tmethods:{\n\t\tbtnClick(){\n\t\t\t//1.第一种方式:params\n            this.$router.push('/home')\n            //2.第二种方式:query\n\t\t\tthis.$router.push({\n\t\t\t\tpath:'/profile',\n\t\t\t\tparams:{\n\t\t\t\t\tname:'xxx',\n\t\t\t\t\tage:13\n\t\t\t\t}\n\t\t\t})\n\t\t}\n\t}\n})\n```\n\n```\nthis.$router.push('路径')\nthis.$router.replace('路径')\n```\n\n**当前活跃路由**\n\n```html\n<h2>{{$route.params.id}}</h2>\n```\n\n```\nthis.$route.params.id\n```\n\n>**关于$router 和 $route** \n\n当使用插件的时候，如 `Vue.use(VueRouter)`,在插件的内部会执行 `install方法`，\n\n且我们使用的 `$router` 和 `$route` 会成为 Vue类的原型中的属性，\n\n<router-link>  、<router-view> 会使用 `Vue.component('routerLink',Link)`注册成为`全局组件`\n\n#### 6、动态路由 ` :to=\"'user/'' + useId\"` `path:user/:id`\n\n```html\n<router-link :to=\"'user/'' + useId\"></router-link>\n\nnew Vue({\n    data(){\n        return{\n            useId:'zhangsan'\n        }\n    }\n})\n```\n\n```\nroutes=[\n\t{\n\t\tpath:user/:id,\n\t\tcomponent:Home\n\t}\n]\n```\n\n#### 7、嵌套路由\n\n1. \n\n```router/index.js\nconst Message = () => import('./message.vue')\nconst User = () =>import('./user')\nconst router = new VueRouter({\n\troutes:[\n        //路由的默认值\n        {\n            path:'/home',\n       \t\tcomponent:Home,\n            children:[\n                {\n\t\t\t\t\tpath:'/home/message',\n\t\t\t\t\tcomponent:Message\n\t\t\t\t\t\n                },\n                {\n\t\t\t\t\tpath:'/home/user',\n\t\t\t\t\tcomponent:User\n                }\n            ]\n        }\n\t],\n})\n\n```\n\n2. \n\n```home.vue\n<router-link to='/home/message'>消息</router-link>\n<router-link to='/home/user'>用户</router-lingk>\n<keep-alive>\n\t<router-view>\n</keep-alive>\n```\n\n#### 8、参数传递 `params` `query`\n\n传递参数主要有两种类型：params、query\n\n##### params\n\n```html\n<router-link to=\"/profile\"></router-link>\n```\n\n- 配置路由格式：`/router/:id`\n- 传递的方式：在 path 后面跟上对应的值\n- 传递后形成的路径：`/router/123` `/router/abc`\n\n##### query\n\n> localhost:8080/profile?name=why&height=1.8&age=19\n\n![image-20210704170344442](C:\\Users\\86188\\AppData\\Roaming\\Typora\\typora-user-images\\image-20210704170344442.png)\n\n```html\n<router-link :to=\"{path:'/profile';query:{name:xxx;age:12}}\"></router-link>\n```\n\n- 配置路由格式：`/router`\n- 传递的方式： 对象中使用 query的key作为传递方式\n- 传递后形成的路径：`/router?id=123` `/router?id=abc`\n\n#### 9、全局导航守卫\n\n`document.title`\n\n1. 先在`routes`中定义好每个组件的`meta`\n2. 使用导航守卫的钩子函数\n\n```\n//前置守卫\nrouter.beforeEach((to,from,next)=>{\n\t//有嵌套路由的情况下，会会获取不到`meta`的值\n  document.title = to.matched[0].meta.title\n  next()\n})\n```\n\n#### 10、路由独享守卫\n\n> **在routes中的组件中定义**\n\n```\nroutes:[\n    {\n\t\tpath:'/bar',\n\t\tcomponent:Bar,\n\t\tbeforeEnter(to,from,next){\n\t\t\n\t\t}\n    }\n]\n```\n\n#### 11、`keep-alive` `组件内守卫`\n\n##### 属性 `include` `exclude`,自定义需要缓存的`router-view`页面\n\n> include和exclude的属性值为组件导出的 name\n\n![image-20210704201422252](C:\\Users\\86188\\AppData\\Roaming\\Typora\\typora-user-images\\image-20210704201422252.png)\n\n```html\n<keep-alive exclude=\"Home\">\n    <router-view/>\n</keep-alive>\n```\n\n##### **保留路由跳转后的状态**`activeted(){}` `deactiveted(){}` `beforeRouteLeave(to,from,next){}`\n\n`deactiveted(){}` `activeted(){}`只有在使用了`keep-alive`去包裹`<router-view/>`才会有效\n\n**重定向可以保留，如果不保留需要点击 router-view 视图才会出现**\n\n```javascripr\ndata(){\n\treturn{\n\t\tpath:'/home/news'\n\t}\n}\nactiveted(){\n\tthis.$router.push(this.path)\n}\n//组件内守卫\nbeforeRouteLeave(to,from,next){\n\tthis.path = this.$route.path\n\tnext()\n}\n```",
+  "date": "2021-10-21T03:27:29Z",
+  "isPublish": true,
+  "tags": [
+    "vue"
+  ]
+},
+{
+  "_id": "6170de7decfa492190af2129",
+  "aid": 23,
+  "title": "Axios",
+  "content": "1. 基本使用\n\n   ```javascript\n   axios.get(url).then()\n   axios({method:'xxx',params:{}}).then()\n   ```\n\n2. 创建实例对象\n\n```javascript\nfunction request(config){\n const instance = axios.create({\n\t baseURL：''\n\t timeout:\n})\n \n //请求劫持\ninstance.interceptors.request.use(\n    //处理config,如添加验证信息到请求头headers中\n  \tconfig => {\n      if (window.getItem(\"token\")) {\n        config.headers.authorization = window.getItem(\"token\")\n      }\n      return config\n    }\n  );\n return Instance(config)\n}\n\n\nfunction getxxxx（）{\n\t return request（{\n\t\t//写配置的地方\n        //请求方式，如果是post、patch的请求，数据要写在data中,而不是params中\n        method:'post/patch/delete',\n       \tparams:{}\n\t }）\ngetxxxx（）.then(res =>{})\n\n```",
+  "date": "2021-10-21T03:29:01Z",
+  "isPublish": true,
+  "tags": [
+    "vue"
+  ]
+},
+{
+  "_id": "6170dfa9ecfa492190af212a",
+  "aid": 24,
+  "title": "VueX",
+  "content": "<image src=\"https://vuex.vuejs.org/vuex.png/\" style=\"width:80%\">\n\n**全局单例模式**\n\n如果将一个对象加入到`Vue类的原型`中，确实是Vue的`所有实例对象`可以共享状态数据，但数据`不是响应式`\n\n```javascript\nVue.prototype.shareObj = {\n\tname:xxx\n}\n//使用\nVue.component('cpn',{\n    template:`<div></div>`,\n    data(){\n        return{\n            //获取\n            name:this.shareObj.name\n        }\n    }\n})\n```\n\n>`状态管理模式`，采用`集中式存储管理` 应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。\n\n### 一、配置，注入Vuex\n\n```javascript\nimport Vue from 'vue'\nimport Vuex from 'vuex'\n\nVue.use(Vuex)\n\nconst store = new Vue.Store({\n\tstate:{},\n    getters:{},\n\tmutations:{},\n\taction:{},\n    module\n})\nexport default store\n```\n\n```javascript\nimport Vue from 'vue'\nimport store from './store.index.js'\nnew Vue({\n\trender:h => h(App),\n    //Vue.prototype.$store = store\n\tstore\n}).$moute('#app')\n```\n\n### 二、核心概念\n\n#### state -> `单一状态树，单一数据源`\n\n#### getters  ->  `gettersmethod(state,getters){return function(e){}}`\n\n>getters方法的第二个参数为`getters本身` \n>\n>mutations中的第二参数为`提交commit传递的参数`\n>\n>故两者的传参方式不同\n\n```js\n//传参的情况\n{{$store.getters.gettersMethods(arguments)}}\n\nconst store = new Vue.Store({\n\tstate:{},\n    getters:{\n    \tgettersMethod(state,getters){\n    \t\treturn function(arguments){\n    \t\t\t...\n    \t\t}\n    \t}\n    }\n})\n```\n\n\n\n#### mutations -> 同步 `this.$store.commit('MutationsMethod',data)`  `MutationsMethod(state){}`\n\n​\tvue 的`store状态`的更新唯一方式：**提交Mutation**\n\n​\tMutation 主要包括两部分：字符串的**事件类型**（type），一个**回调函数**（handler），该回调函数的第一个参数就是 `state`\n\n```js\n//传参\n//在组件中\nnew Vue({\n    render:h=>h(App),\n    methods:{\n        componentMethod(payload){\n    \t\t//数据较多也可传递对象作为payload（载荷）\n            1.普通的提交风格\n            this.$store.commit('MutationsMethod',payload)\n            2.特殊的提交格,传递的是一个对象{type:'MutationsMethod',count}\n            this.$store.commit({\n                type:'MutationsMethod',\n                count\n            })\n        }\n    }\n})\n\n//在store.js中\nconst store = new Vue.Store({\n    mutation:{\n        MutationsMethod(state，payload){\n            ...\n        }\n    }\n})\n```\n\n#### **类型常量**\n\n​\t1.创建`mutations_type.js`文件\n\n```js\nexport const INCREMENT = 'increment'\n```\n\n​\t2.导入到运用常量的组件中\n\n```js\nimport { INCREMENT } from './mutations_type.js'\n```\n\n​\t3.使用\n\n```js\n//组件方法中\nmethods:{\n\tcomponentMethod(){\n        //提交\n\t\tthis.$store.commit(INCREMENT)\n\t}\n}\n\n//store中的getters\ngetters:{\n\t[INCREMENT](){\n\t\n\t}\n}\n```\n\n#### action -> 异步 `actionsMethod(context){异步代码;context.commit('mutationsMethod')}`\n\n\n​\t!!!!!  **在组件中用`dispatch` 派遣给 `actions`, 在`actions` 中执行完`异步代码`后,再 `commit`给 `mutations`**\n\n```js\n//组件\n//<button @click=\"componnetMethod\">按钮</button>\nmethods:{\n    componnetMethod(){\n        this.$store.dispatch('actionsMethod',payload)\n    }\n}\n\n//store中的actions\nactions:{\n    actionsMethod(context,payload){\n        ..异步代码..\n        context.commit('mutationsMethod',payload)\n    }\n}\nmutations:{\n    mutationsMethod(state,payload){\n        \n    }\n}\n```\n\n```js\n//组件\n//<button @click=\"componnetMethod\">按钮</button>\nmethods:{\n    componnetMethod(){\n   \t\t\t 1.\n        this.$store.dispatch('actionsMethod')\n             2.将payload部分传递过去一个对象，对象属性加入一个callback回调方法，异步执行完毕后回调。\n        this.$store.dispatch('actionsMethod',{\n            message:'xxxx',\n            callback(){\n                console.log('回调了')\n            }\n        })\n    }\n}\n\n//store中的actions\nactions:{\n    actionsMethod(context,payload){\n        ..异步代码..\n        context.commit('mutationsMethod',payload.message)\n        payload.callback()\n    }\n}\nmutations:{\n    mutationsMethod(state,payload){\n        \n    }\n}\n```\n\n​\t**`actions` 中的法可以使用 `Promise`**，**`dispatch`可以返回一个`Promise`**\n\n```js\n//组件\n//<button @click=\"componnetMethod\">按钮</button>\nmethods:{\n    componnetMethod(){\n        //使用Promise\n        this.$store.dispatch('actionsMethod',payload).then(res=>{\n            console.log(res)\n        })\n    }\n}\n//store中的actions\nactions:{\n    actionsMethod(context,payload){\n        return new Promise((resolve,reject)=> {\n          setTimeout(()=>{\n              ..异步代码\n              context.commit('mutationMethod',payload)\n              resolve(message)\n          })\n        })\n    }\n}\nmutations:{\n    mutationsMethod(state){\n        \n    }\n}\n```\n\n#### **module **  -> module中getters方法中的 `rootState`\n\n​\t`模块a`中的值获取\n\n```html\n<div>{{$store.a.state.name}}</div>\n```\n\n",
+  "date": "2021-10-21T04:47:16Z",
+  "isPublish": true,
+  "tags": [
+    "vue"
+  ]
+},
+{
+  "_id": "6170e2e1ecfa492190af212b",
+  "aid": 25,
+  "title": "发布订阅和观者模式",
+  "content": "\n## 观察者模式\n\n```javascript\n<script>\n/*\n  观察者（订阅者） --Watcher\n    updata():当事件发生的时候，具体要做的事\n  目标（发布者） --Dep\n    subs数组：添加所有的观察者\n    addSub()：添加观察者\n    notify():当事件发生，调用所有观察者的 updata()方法\n  没有事件中心\n   */\n</script>\n<script>\n  //发布者--目标\n  class Dep{\n    constructor(){\n      //记录所有订阅者\n      this.subs = []\n    }\n    //添加订阅者\n    addSub(watch){\n      if(watch && watch.updata){\n        this.subs.push(watch)\n      }\n    }\n    //发布通知\n    notify(){\n      this.subs.forEach(watch =>{\n        watch.updata()\n      })\n    }\n  }\n\n  //订阅者\n  class Watch{\n    constructor(value){\n      this.value = value\n    }\n    updata(){\n\n    }\n  }\n</script>\n```\n\n## 发布订阅模式\n\n```javascript\n<script>\n  //事件触发器\n  class EventEmitter{\n    constructor(){\n      this.subs = Object.create(null)\n    }\n    //注册事件\n    $on(eventType,handler){\n      //两种情况:1.事件类型还没有，subs[eventType] = [handle]\n      //\t\t2.事件类型有，subs[eventType].push(handle) \n      this.subs[eventType] = this.subs[eventType] || []\n      this.subs[eventType].push(handler) \n    }\n    //触发事件\n    $emit(eventType){\n      if(this.subs[eventType]){\n        this.subs[eventType].forEach( handler => {\n          handler()\n        })\n      }\n    }\n  }\n  const em = new EventEmitter()\n  em.$on('click',function(){\n    console.log('click1')\n  })\n  em.$on('click',function(){\n    console.log('click2')\n  })\n  em.$emit('click')\n</script>\n```\n\n",
+  "date": "2021-10-21T03:47:45Z",
+  "isPublish": true,
+  "tags": [
+    "模式"
+  ]
+},
+{
+  "_id": "6170e460ecfa492190af212c",
+  "aid": 26,
+  "title": "node模块",
+  "content": "node内部会帮我们做的操作：\n\n ```javascript\nconst module = {\n     exports :{\n\n     }\n}\n\nconst export = module.exports  //export 只是module的引用，指向同一块地址，只是为了方便往模块对象中添加属性而已\n\nreturn module.exports      //最后返回出去的是module.exports\n ```\n",
+  "date": "2021-10-21T03:54:08Z",
+  "isPublish": true,
+  "tags": [
+    "node"
+  ]
+},
+{
+  "_id": "6170e4ccecfa492190af212e",
+  "aid": 28,
+  "title": "这是一篇草稿",
+  "content": "不知道写撒",
+  "date": "2021-10-21T03:55:56Z",
+  "isPublish": false,
+  "tags": [
+    "草稿"
+  ]
+}]

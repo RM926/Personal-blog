@@ -1,0 +1,37 @@
+/* .vcards .vcard .vh .vmeta .vat{
+  color:rgb(74, 192, 94) !important
+}
+.vcards .vcard .vh .vmeta{
+  padding:0 .4rem;
+} */
+
+/* .vcards .vcard .vhead .vnick{
+  padding-left: .4rem;
+  border-left: .2rem solid rgba(4, 107, 9, 0.616);
+  color:rgba(4, 107, 9, 0.616);
+  font-weight:600 !important;
+} */
+/* .vcards .vcard .vh .vtime{
+  padding-left: .6rem;
+} */
+/* .vcards .vcard .vhead .vnick,.vcards .vcard .vcontent{
+  padding-left: .4rem;
+} */
+/* .vnick,.vcontent{
+  padding-left: .7rem;
+} */
+.vnick,.vcontent p{
+ font-family:'Microsoft YaHei','Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+.vpanel .vwrap{
+  border:1px solid #cac9c9 !important;
+}
+.vcount{
+  font-weight:400 !important;
+}
+/* .vnick,.vcontent p a{
+  color:rgba(4, 107, 9, 0.616) !important
+} */
+/* .vcards .vcard{
+  padding:0.5rem 0 0 0 !important;
+} */
